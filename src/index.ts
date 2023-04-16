@@ -1,18 +1,17 @@
 import Hapi from "@hapi/hapi";
+import { routes } from "./routes/routes";
+import * as dotenv from "dotenv";
+import * as path from "path";
 
 const init = async () => {
+  dotenv.config({ path: path.join(__dirname + "/../.env") });
+
   const server = Hapi.server({
-    port: 3000,
-    host: "localhost",
+    port: process.env.PORT,
+    host: "localhost"
   });
 
-  server.route({
-    method: "GET",
-    path: "/",
-    handler: (request, h) => {
-      return "Hello, world!";
-    },
-  });
+  server.route(routes);
 
   await server.start();
   console.log(`Server running on ${server.info.uri}`);
@@ -23,4 +22,4 @@ process.on("unhandledRejection", (err) => {
   process.exit(1);
 });
 
-init();
+init().then(() => console.log("Server started"));
