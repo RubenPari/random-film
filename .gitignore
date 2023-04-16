@@ -1,0 +1,27 @@
+# Ignore node_modules directory
+node_modules/
+
+# Ignore TypeScript build output directory
+dist/
+
+# Ignore .env file containing sensitive information
+.env
+
+# Ignore any files generated during development or testing
+coverage/
+*.log
+*.tsbuildinfo
+*.pid
+*.seed
+*.env.test
+
+# Ignore any editor or IDE files
+.vscode/
+.idea/
+*.sublime*
+*.tmproj
+*.esproj
+*.editorconfig
+*.settings
+*.classpath
+*.project
