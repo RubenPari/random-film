@@ -8,7 +8,7 @@ export const routes = [
   },
   {
     method: "GET",
-    path: "/film/random/genre",
+    path: "/film/random/genre/{genre}",
     handler: getFilmRandomGenre
   },
   {
