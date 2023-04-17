@@ -13,7 +13,7 @@ export const routes = [
   },
   {
     method: "GET",
-    path: "/film/random/rating",
+    path: "/film/random/rating/{rating}",
     handler: getFilmRandomRating
   }
 ];
