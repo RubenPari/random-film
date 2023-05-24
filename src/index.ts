@@ -7,8 +7,8 @@ const init = async () => {
   dotenv.config({ path: path.join(__dirname + "/../.env") });
 
   const server = Hapi.server({
-    port: process.env.PORT,
-    host: "localhost"
+    port: process.env.PORT || 3000,
+    host: "localhost",
   });
 
   server.route(routes);
